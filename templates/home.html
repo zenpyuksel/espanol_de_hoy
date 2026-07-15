@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Español de Hoy</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    
+</head>
+<body>
+    <h1>¡Bienvenidos a Español de Hoy!</h1>
+   <h2>Word of the Day</h2>
+<p><strong>Word:</strong> {{ content.word }}</p>
+<p><strong>Meaning:</strong> {{ content.meaning }}</p>
+<p><strong>Example:</strong> {{ content.example_sentence }}</p>
+
+<h2>Cultural Fun Fact</h2>
+<p>{{ content.fun_fact }}</p>
+
+<h2>Song Suggestion</h2>
+<p><a href="{{ content.song_link }}" target="_blank">{{ content.song_title }}</a></p>
+
+<h2>The slang of the day</h2>
+<p><strong> Slang:</strong>{{ content.slang_word }}</p>
+<p><strong>Meaning:</strong> {{ content.slang_meaning }}</p>
+
+</body>
+</html>
