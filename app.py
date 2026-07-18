@@ -42,6 +42,15 @@ daily_content = [
         "song_link": "https://open.spotify.com/track/4it4NYn9wNqGV54joA6oN0?si=47ed7c801ea2416e",
         "slang_word": "A ver",
         "slang_meaning": "Let'see"
+    },
+    {   "word": "La Madrugada (noun)",
+        "meaning": "The early morning, dawn",
+        "example_sentence": "Siempre me despierto en la madrugada para estudiar.",
+        "fun_fact": "In Mexico, people don't view death as a sad ending, but rather celebrate the Día de los Muertos (Day of the Dead) with vibrant colors, yellow marigolds, and favorite foods to joyfully welcome the souls of their ancestors back for a brief family reunion.",
+        "song_title": "Madrugada by Enjambre (Does the name of the song look familiar? haha)",
+        "song_link": "https://open.spotify.com/track/1vDZxPgTC1Y6TILCJJnswG?si=29f9131fcdfd433f",
+        "slang_word": "Tiene sentido",
+        "slang_meaning": "It makes sense"
     }
         
 
