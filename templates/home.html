@@ -6,21 +6,31 @@
     
 </head>
 <body>
+   <div class="card">
     <h1>¡Bienvenidos a Español de Hoy!</h1>
    <h2>Word of the Day</h2>
 <p><strong>Word:</strong> {{ content.word }}</p>
 <p><strong>Meaning:</strong> {{ content.meaning }}</p>
 <p><strong>Example:</strong> {{ content.example_sentence }}</p>
+</div>
 
+<div class="card">
 <h2>Cultural Fun Fact</h2>
 <p>{{ content.fun_fact }}</p>
-
+</div>
+<div class="card">
 <h2>Song Suggestion</h2>
 <p><a href="{{ content.song_link }}" target="_blank">{{ content.song_title }}</a></p>
-
-<h2>The slang of the day</h2>
-<p><strong> Slang:</strong>{{ content.slang_word }}</p>
+</div>
+<div class="card">
+<h2>Español de la vida diaria</h2>
+<p><strong> Expression:</strong> {{ content.slang_word }}</p>
 <p><strong>Meaning:</strong> {{ content.slang_meaning }}</p>
-
+</div>
+<p> ¡Hola! Soy Zeynep. Me encanta español mucho. Comparto las palabras que aprendo aquí cada día. ¡Espero que te guste!</p>
 </body>
+<div class="nav">
+    <a href="/">Home</a>
+    <a href="/why-spanish">Why Spanish?</a>
+</div>
 </html>
