@@ -28,7 +28,7 @@ daily_content = [
         "word": "La Esperanza (noun)",
         "meaning": "Hope",
         "example_sentence": "Todavía tengo la esperanza de aprobar el examen.",
-        "fun_fact": "In Columbia, they drink hot chocolate with a thick slice of cheese dropped into it. It is called chocolate santafereño",
+        "fun_fact": "In Columbia, they drink hot chocolate with a thick slice of cheese dropped into it. It is called chocolate santafereño.",
         "song_title": "Mil Horas by Los Abuelos De La Nada",
         "song_link": "https://open.spotify.com/track/7Mj6R7TjsPxeLYu0Xdvl73?si=bcc2e676f0cf4f6d",
         "slang_word": "No me des el avión.",
@@ -41,7 +41,7 @@ daily_content = [
         "song_title": "De Música Ligera by Soda Stereo",
         "song_link": "https://open.spotify.com/track/4it4NYn9wNqGV54joA6oN0?si=47ed7c801ea2416e",
         "slang_word": "A ver",
-        "slang_meaning": "Let'see"
+        "slang_meaning": "Let's see"
     },
     {   "word": "La Madrugada (noun)",
         "meaning": "The early morning, dawn",
@@ -49,11 +49,27 @@ daily_content = [
         "fun_fact": "In Mexico, people don't view death as a sad ending, but rather celebrate the Día de los Muertos (Day of the Dead) with vibrant colors, yellow marigolds, and favorite foods to joyfully welcome the souls of their ancestors back for a brief family reunion.",
         "song_title": "Madrugada by Enjambre (Does the name of the song look familiar? haha)",
         "song_link": "https://open.spotify.com/track/1vDZxPgTC1Y6TILCJJnswG?si=29f9131fcdfd433f",
-        "slang_word": "Tiene sentido",
-        "slang_meaning": "It makes sense"
-    }
-        
-
+        "slang_word": "Tiene sentido.",
+        "slang_meaning": "It makes sense."
+    },
+    {   "word": "Estrenar (verb)",
+        "meaning": "To wear, use, or perform something for the very first time",
+        "example_sentence": "Hoy voy a estrenar los zapatos nuevos que compré ayer.",
+        "fun_fact" : "The Spanish national anthem (Marcha Real) has no words at all, meaning it is purely instrumental.",
+        "song_title" : "Ya No Sé Que Hacer Conmigo by El Cuarteto De Nos",
+        "song_link" : "https://open.spotify.com/track/6uaaUABuK03YkEPwlsuoKq?si=b52f4904f6674c40",
+        "slang_word" : "¡De una!",
+        "slang_meaning": "Absolutely! , Right away! (Very common in Colombia and Argentina)"
+    }, 
+    {   "word" : "El puente (noun)",
+        "word_meaning" : "Bridge",
+        "example_sentence" : "Cruzamos el puente sobre el río para llegar al centro de la ciudad.",
+        "fun_fact" : "Spanish is the official language in 21 countries.",
+        "song_title" : "Todo Irá Bien by Chenoa",
+        "song_link" : "https://open.spotify.com/track/16FBzzwggGrMRVKab9dcDc?si=949e331781c44789",
+        "slang_word" : "Vale la pena.",
+        "slang_meaning": "It's worth it."
+    } 
 ]
 
 @app.route("/")
