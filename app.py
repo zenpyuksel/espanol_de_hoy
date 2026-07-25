@@ -62,7 +62,7 @@ daily_content = [
         "slang_meaning": "Absolutely! , Right away! (Very common in Colombia and Argentina)"
     }, 
     {   "word" : "El puente (noun)",
-        "word_meaning" : "Bridge",
+        "meaning" : "Bridge",
         "example_sentence" : "Cruzamos el puente sobre el río para llegar al centro de la ciudad.",
         "fun_fact" : "Spanish is the official language in 21 countries.",
         "song_title" : "Todo Irá Bien by Chenoa",
