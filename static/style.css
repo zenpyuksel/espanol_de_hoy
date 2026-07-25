@@ -4,10 +4,15 @@ body {
     font-family: 'Poppins', sans-serif;
     background-color: #fff8e1;
     color: #3a3a3a;
-    max-width: 700px;
-    margin: 60px auto;
-    padding: 20px;
+    margin: 0;
+    padding: 0;
     line-height: 1.7;
+}
+
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 40px 5px 10px 5px;
 }
 
 h1 {
@@ -42,11 +47,24 @@ a:hover {
     text-decoration: underline;
 }
 .nav {
-    text-align: center;
-    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    background-color: #aa151b;
+    padding: 16px 0;
+    margin-bottom: 40px;
 }
 
 .nav a {
-    margin: 0 15px;
-    font-size: 1.1em;
+    color: #ffffff;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: background-color 0.2s;
+}
+
+.nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    text-decoration: none;
 }
