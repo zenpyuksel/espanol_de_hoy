@@ -5,7 +5,8 @@ app = Flask(__name__)
 
 daily_content = [
     {
-        "word": "Madrugar (verb)",
+        "word": "Madrugar",
+        "word_type" : "verb",
         "meaning": "To wake up early",
         "example_sentence": "Voy a madrugar mañana para hacer ejercicio.",
         "fun_fact": "In Spain, dinner is often eaten as late as 9 or 10 PM.",
@@ -15,7 +16,8 @@ daily_content = [
         "slang_meaning": "Cool or awesome (used in Spain)"
     },
     {
-        "word": "Anteayer (adverb)",
+        "word": "Anteayer",
+        "word_type" : "adverb",
         "meaning": "The day before yesterday",
         "example_sentence": "Te vi anteayer en el parque.",
         "fun_fact": "Spanish has a single word for 'day before yesterday' — English doesn't!",
@@ -25,7 +27,8 @@ daily_content = [
         "slang_meaning": "Cool (used in Mexico)"
     },
     {
-        "word": "La Esperanza (noun)",
+        "word": "La Esperanza",
+        "word_type" : "noun",
         "meaning": "Hope",
         "example_sentence": "Todavía tengo la esperanza de aprobar el examen.",
         "fun_fact": "In Columbia, they drink hot chocolate with a thick slice of cheese dropped into it. It is called chocolate santafereño.",
@@ -34,7 +37,8 @@ daily_content = [
         "slang_word": "No me des el avión.",
         "slang_meaning": "Don't shrug me off (used in Mexico). Also it literally translates to don't give me the airplane."
     },
-    {   "word": "La Miel (noun)",
+    {   "word": "La Miel",
+        "word_type" : "noun",
         "meaning": "Honey",
         "example_sentence": "Me encanta comer miel con mantequilla en el desayuno.",
         "fun_fact": "In Spain, it is a cultural tradition to eat exactly twelve grapes at the midnight strokes of New Year's Eve for good luck in the coming year.",
@@ -43,7 +47,8 @@ daily_content = [
         "slang_word": "A ver",
         "slang_meaning": "Let's see"
     },
-    {   "word": "La Madrugada (noun)",
+    {   "word": "La Madrugada",
+        "word_type" : "noun",
         "meaning": "The early morning, dawn",
         "example_sentence": "Siempre me despierto en la madrugada para estudiar.",
         "fun_fact": "In Mexico, people don't view death as a sad ending, but rather celebrate the Día de los Muertos (Day of the Dead) with vibrant colors, yellow marigolds, and favorite foods to joyfully welcome the souls of their ancestors back for a brief family reunion.",
@@ -52,7 +57,8 @@ daily_content = [
         "slang_word": "Tiene sentido.",
         "slang_meaning": "It makes sense."
     },
-    {   "word": "Estrenar (verb)",
+    {   "word": "Estrenar",
+        "word_type" : "verb",
         "meaning": "To wear, use, or perform something for the very first time",
         "example_sentence": "Hoy voy a estrenar los zapatos nuevos que compré ayer.",
         "fun_fact" : "The Spanish national anthem (Marcha Real) has no words at all, meaning it is purely instrumental.",
@@ -61,7 +67,8 @@ daily_content = [
         "slang_word" : "¡De una!",
         "slang_meaning": "Absolutely! , Right away! (Very common in Colombia and Argentina)"
     }, 
-    {   "word" : "El puente (noun)",
+    {   "word" : "El puente",
+        "word_type" : "noun",
         "meaning" : "Bridge",
         "example_sentence" : "Cruzamos el puente sobre el río para llegar al centro de la ciudad.",
         "fun_fact" : "Spanish is the official language in 21 countries.",
@@ -92,17 +99,23 @@ def quiz():
     if request.method == "POST":
         user_answer = request.form.get("answer", "").strip().lower()
         correct_word = request.form.get("correct_word", "").strip().lower()
+        correct_word2 = request.form.get("correct_word", "").strip().lower()[3:]
 
         if user_answer == correct_word:
+            result = "¡Correcto! 🎉"
+        elif user_answer == correct_word2:
             result = "¡Correcto! 🎉"
         else:
             result = f"Nice try! The correct answer was '{correct_word.capitalize()}'"
 
         question_data = random.choice(daily_content)
+        while question_data["word"] == correct_word.capitalize():
+            question_data = random.choice(daily_content)
+
         return render_template("quiz.html", question=question_data, result=result)
 
     question_data = random.choice(daily_content)
-    return render_template("quiz.html", question=question_data, result=None)    
+    return render_template("quiz.html", question=question_data, result=None)  
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
