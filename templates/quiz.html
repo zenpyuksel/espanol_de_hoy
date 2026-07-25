@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz - Español de Hoy</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="nav">
+        <a href="/">Home</a>
+        <a href="/why-spanish">Why Spanish?</a>
+        <a href="/quiz">Quiz</a>
+    </div>
+
+    <div class="container">
+        <div class="card">
+            <h1>Quiz Time!</h1>
+
+            {% if result %}
+                <p><strong>{{ result }}</strong></p>
+            {% endif %}
+
+            <p>What is the Spanish word for: <strong>{{ question.meaning }}</strong>?</p>
+            <p style="font-size: 0.85em; color: #888;">Hint: starts with "{{ question.word[0].upper() }}"</p>
+
+            <form method="POST">
+                <input type="text" name="answer" placeholder="Type your answer">
+                <input type="hidden" name="correct_word" value="{{ question.word }}">
+                <button type="submit">Check</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

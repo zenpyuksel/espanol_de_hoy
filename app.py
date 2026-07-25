@@ -84,6 +84,28 @@ def why_spanish():
     return render_template("why_spanish.html")
 import os
 
+from flask import Flask, render_template, request
+import random
+
+@app.route("/quiz", methods=["GET", "POST"])
+def quiz():
+    if request.method == "POST":
+        user_answer = request.form.get("answer", "").strip().lower()
+        correct_word = request.form.get("correct_word", "").strip().lower()
+
+        if user_answer == correct_word:
+            result = "¡Correcto! 🎉"
+        else:
+            result = f"Nice try! The correct answer was '{correct_word.capitalize()}'"
+
+        question_data = random.choice(daily_content)
+        return render_template("quiz.html", question=question_data, result=result)
+
+    question_data = random.choice(daily_content)
+    return render_template("quiz.html", question=question_data, result=None)    
+
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port)
+
+   
