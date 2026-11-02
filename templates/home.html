@@ -1,42 +1,74 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+   <meta name="google" content="notranslate">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A little Spanish every day: words, culture, music, and expressions.">
     <title>Español de Hoy</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    
 </head>
-<body>
-    <div class="nav">
-    <a href="/">Home</a>
-    <a href="/why-spanish">Why Spanish?</a>
-    <a href="/quiz">Quiz</a>
+<body class="home-page">
+    <header class="site-header">
+        <nav class="nav" aria-label="Main navigation">
+            <a class="brand" href="/">Español <span>de Hoy</span><span class="brand-dot">.</span></a>
+            <div class="nav-links">
+                <a class="active" href="/" aria-current="page">Home</a>
+                <a href="/why-spanish">Why Spanish?</a>
+                <a href="/quiz">Quiz</a>
+            </div>
+        </nav>
+    </header>
 
-</div>
-      <div class="container">
- 
-<div class="card">
-    <h1>¡Bienvenidos a Español de Hoy!</h1>
-   <h2>Word of the Day</h2>
-<p><strong>Word:</strong> {{ content.word }} ({{ content.word_type }})</p>
-<p><strong>Meaning:</strong> {{ content.meaning }}</p>
-<p><strong>Example:</strong> {{ content.example_sentence }}</p>
-</div>
+    <main class="container">
+        <section class="hero" aria-labelledby="welcome-title">
+            <div class="hero-decoration" aria-hidden="true">✳</div>
+            <p class="eyebrow">ESPAÑOL DE HOY</p>
+            <h1 id="welcome-title">¡Bienvenidos!</h1>
+            <div class="hero-underline" aria-hidden="true"></div>
+        </section>
 
-<div class="card">
-<h2>Cultural Fun Fact</h2>
-<p>{{ content.fun_fact }}</p>
-</div>
-<div class="card">
-<h2>Song Suggestion</h2>
-<p><a href="{{ content.song_link }}" target="_blank">{{ content.song_title }}</a></p>
-</div>
-<div class="card">
-<h2>Español de la vida diaria</h2>
-<p><strong> Expression:</strong> {{ content.slang_word }}</p>
-<p><strong>Meaning:</strong> {{ content.slang_meaning }}</p>
-</div>
-<p> ¡Hola! Soy Zeynep. Me encanta español mucho. Comparto las palabras que aprendo aquí cada día. ¡Espero que te guste!</p>
-      </div>
+        <section class="word-feature" aria-labelledby="word-heading">
+            <div class="section-label"><span class="label-icon" aria-hidden="true">✦</span> <h2 id="word-heading">Palabra del día</h2></div>
+            <div class="word-content">
+                <div>
+                    <p class="word-type">{{ content.word_type }}</p>
+                    <p class="featured-word">{{ content.word }}</p>
+                    <p class="word-meaning">{{ content.meaning }}</p>
+                </div>
+                <div class="example-box">
+                    <span class="mini-label">IN A SENTENCE</span>
+                    <p>{{ content.example_sentence }}</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="feature-grid">
+            <section class="card culture-card" aria-labelledby="culture-heading">
+                <div class="card-top"><span class="card-icon" aria-hidden="true">✺</span><h2 id="culture-heading">Culture Corner</h2></div>
+                <p>{{ content.fun_fact }}</p>
+            </section>
+            <section class="card song-card" aria-labelledby="song-heading">
+                <div class="card-top"><span class="card-icon" aria-hidden="true">♫</span><h2 id="song-heading">Turn Up the Spanish</h2></div>
+                <p class="mini-label">TODAY'S SONG</p>
+                <a class="song-link" href="{{ content.song_link }}" target="_blank" rel="noopener noreferrer">{{ content.song_title }} <span aria-hidden="true">↗</span></a>
+            </section>
+        </div>
+
+        <section class="card expression-card" aria-labelledby="expression-heading">
+            <div class="card-top"><span class="card-icon" aria-hidden="true">¡!</span><h2 id="expression-heading">Español de la vida diaria</h2></div>
+            <div class="expression-content">
+                <p class="expression-word">{{ content.slang_word }}</p>
+                <p class="expression-meaning">{{ content.slang_meaning }}</p>
+            </div>
+        </section>
+
+        <section class="about" aria-label="About the creator">
+            <h2>¡Hola! Soy Zeynep.</h2>
+            <p>Comparto aquí un poquito del español que aprendo cada día.</p>
+        </section>
+    </main>
+
+    <footer class="site-footer">Made with curiosity and a love for Spanish.</footer>
 </body>
-
 </html>

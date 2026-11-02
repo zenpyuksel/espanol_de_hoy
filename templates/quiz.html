@@ -1,38 +1,49 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" class="notranslate" translate="no">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" content="notranslate">
     <title>Quiz - Español de Hoy</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
-<body>
-    <div class="nav">
+<body class="secondary-page">
+    <nav class="nav" aria-label="Main navigation">
         <a href="/">Home</a>
         <a href="/why-spanish">Why Spanish?</a>
-        <a href="/quiz">Quiz</a>
-    </div>
+        <a href="/quiz" aria-current="page">Quiz</a>
+    </nav>
 
-    <div class="container">
-        <div class="card">
-            <h1>Quiz Time!</h1>
+    <main class="secondary-container">
+        <header class="secondary-hero">
+            <p class="secondary-eyebrow">ESPAÑOL DE HOY</p>
+            <h1>¡Ponte a prueba!</h1>
+            <p>Quiz Time!</p>
+        </header>
 
+        <section class="secondary-card quiz-card">
             {% if result %}
-                <p><strong>{{ result }}</strong></p>
+                <div class="quiz-result" role="status">{{ result }}</div>
             {% endif %}
 
-            <p>What is the Spanish word for: <strong>{{ question.meaning }}?</strong></p>
-            {% if question.word[0:2] in ["La","El"] %}
-                <p style="font-size: 0.85em; color: #888;">Hint: starts with "{{ question.word[3].upper() }}"</p>
+            <p class="quiz-question">What is the Spanish word for:</p>
+            <h2 class="quiz-meaning">{{ question.meaning }}?</h2>
 
-            {% else %}  
-                  <p style="font-size: 0.85em; color: #888;">Hint: starts with "{{ question.word[0].upper() }}"</p>
+            {% if question.word[0:2] in ["La", "El"] %}
+                <p class="quiz-hint">Hint: starts with “{{ question.word[3].upper() }}”</p>
+            {% else %}
+                <p class="quiz-hint">Hint: starts with “{{ question.word[0].upper() }}”</p>
+            {% endif %}
 
-            {% endif %}  
-            <form method="POST">
-                <input type="text" name="answer" placeholder="Type your answer">
+            <form method="POST" class="quiz-form">
+                <label for="answer" class="visually-hidden">Your answer in Spanish</label>
+                <input id="answer" type="text" name="answer" placeholder="Type your answer" autocomplete="off" required>
                 <input type="hidden" name="correct_word" value="{{ question.word }}">
-                <button type="submit">Check</button>
+                <button type="submit">Check Answer</button>
             </form>
-        </div>
-    </div>
+        </section>
+    </main>
+
+    <footer class="secondary-footer">Made with curiosity and a love for Spanish.</footer>
 </body>
 </html>

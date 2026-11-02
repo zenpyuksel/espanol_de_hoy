@@ -1,23 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" class="notranslate" translate="no">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" content="notranslate">
     <title>Why Spanish? - Español de Hoy</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
-<body>
-    <div class="nav">
-    <a href="/">Home</a>
-    <a href="/why-spanish">Why Spanish?</a>
-    <a href="/quiz">Quiz</a>
+<body class="secondary-page">
+    <nav class="nav" aria-label="Main navigation">
+        <a href="/">Home</a>
+        <a href="/why-spanish" aria-current="page">Why Spanish?</a>
+        <a href="/quiz">Quiz</a>
+    </nav>
 
-</div>
-<div class="container">
-    <div class="card">
-        <h1>Why Spanish?</h1>
-        <p> I think Spanish is one of the most fascinating languages in the world. Its structure, phonetics, and expressions are really unique.
-             Also, it is spoken by around 600 million people globally, which means learning it opens up so many opportunities to connect with people from different countries.
-              Plus, it is not just about memorizing grammar, but also a way to learn an incredible culture, music, and traditions. </p>
-    </div>
-</div>
+    <main class="secondary-container">
+        <header class="secondary-hero">
+            <p class="secondary-eyebrow">ESPAÑOL DE HOY</p>
+            <h1>Why Spanish?</h1>
+            <p>¿Por qué español?</p>
+        </header>
+
+        <section class="secondary-card why-spanish-card">
+            <p>I think Spanish is one of the most fascinating languages in the world. Its structure, phonetics, and expressions are really unique. Also, it is spoken by around 600 million people globally, which means learning it opens up so many opportunities to connect with people from different countries. Plus, it is not just about memorizing grammar, but also a way to learn an incredible culture, music, and traditions.</p>
+        </section>
+    </main>
+
+    <footer class="secondary-footer">Made with curiosity and a love for Spanish.</footer>
 </body>
 </html>
